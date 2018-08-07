@@ -2,7 +2,7 @@ import TextGreeting from './greeting';
 import Panel from './panel';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import '../sass/hello.scss';
+import '../styles/hello.scss';
 
 var App = React.createClass({
   render() {

@@ -18,10 +18,11 @@ class TextGreeting extends React.Component{
   getPythonHello(){
     var fetchUrl = window.location.href + "hello";
     console.log(fetchUrl);
-    fetch(fetchUrl)
-        .then(response => response.json())      // 1
+    return fetch(fetchUrl)
+        .then(response => response.json()) // 1
         .then(json => {                    // 2
             console.log(json);
+            return this.personaliseGreeting(json.greeting)
         })
         .catch(error => {                  // 3
             console.log("oups");

@@ -5,10 +5,10 @@ var webpack = require('webpack');
 
 let configuration = {
   entry: {
-    main: ['./js/app.js'],
+    main: ['./front/webapp/src/js/app.js'],
   },
   output: {
-    path: __dirname + '/static',
+    path: __dirname + '/front/common/static/js',
     filename: "bundle.js"
   },
   module: {
@@ -34,7 +34,9 @@ let configuration = {
     ]
   },
   plugins: [
-    new ExtractTextPlugin('styles.css')
+    new ExtractTextPlugin({
+      filename: '../css/styles.css'
+    })
   ]
 }
 

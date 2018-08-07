@@ -1,15 +1,16 @@
-from flask import Flask, render_template
+from flask import render_template
 import random
 import json
-app = Flask(__name__)
+
+from . import webapp
 
 
-@app.route('/')
+@webapp.route('/')
 def index():
     return render_template('index.html')
 
 
-@app.route('/hello')
+@webapp.route('/hello')
 def hello():
     print("hello route")
     result = json.dumps({"greeting": get_hello()})
@@ -21,6 +22,3 @@ def get_hello():
     greeting_list = ['Ciao', 'Hei', 'Salut', 'Hola', 'Hallo', 'Hej']
     print(random.choice(greeting_list))
     return random.choice(greeting_list)
-
-if __name__ == '__main__':
-    app.run(debug=True)
