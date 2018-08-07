@@ -12,13 +12,10 @@ def index():
 
 @webapp.route('/hello')
 def hello():
-    print("hello route")
     result = json.dumps({"greeting": get_hello()})
-    print(result)
     return result
 
 
 def get_hello():
     greeting_list = ['Ciao', 'Hei', 'Salut', 'Hola', 'Hallo', 'Hej']
-    print(random.choice(greeting_list))
     return random.choice(greeting_list)

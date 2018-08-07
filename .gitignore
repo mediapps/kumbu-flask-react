@@ -2,4 +2,8 @@
 venv
 node_modules
 static/bundle.js
-
+__pycache__
+*.pyc
+config/config.py
+front/common/static/css/
+front/common/static/js/

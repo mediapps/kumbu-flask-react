@@ -6,7 +6,6 @@ from config.config import MACHINE
 webapp = Blueprint(
     'webapp',
     __name__,
-    subdomain=MACHINE["NAME"],
     template_folder='templates',
     static_folder='../common/static'
 )
