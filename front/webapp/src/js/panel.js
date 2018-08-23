@@ -1,6 +1,6 @@
-import React from 'react';
+import React, {PureComponent} from 'react';
 
-var Panel = React.createClass({
+class Panel extends PureComponent{
   render() {
     return (
       <div className="panel">
@@ -8,6 +8,6 @@ var Panel = React.createClass({
       </div>
     );
   }
-});
+}
 
 export default Panel;

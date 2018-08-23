@@ -1,8 +1,8 @@
-import React from 'react';
-import Button from './button';
+import React, {Component} from 'react';
+import Button from '../../../common/src/js/button';
 var $ = require('jquery');
 
-class TextGreeting extends React.Component{
+class TextGreeting extends Component{
   constructor(props) {
     super(props);
     this.state = {greeting: 'Hello ' + this.props.name + "!"};

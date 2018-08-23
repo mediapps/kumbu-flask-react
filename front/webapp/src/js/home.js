@@ -1,10 +1,10 @@
+import React, {Component} from 'react';
 import TextGreeting from './greeting';
 import Panel from './panel';
-import React from 'react';
 import ReactDOM from 'react-dom';
 import '../styles/hello.scss';
 
-var App = React.createClass({
+class Home extends Component{
   render() {
     return (
       <div>
@@ -20,8 +20,6 @@ var App = React.createClass({
     )
   }
 
-});
+};
 
-ReactDOM.render(
-  <App />, document.getElementById('main')
-);
+export default Home;

@@ -1,15 +1,18 @@
 const path = require('path');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+//const ReactLoadablePlugin = require('react-loadable/webpack');
 
 var webpack = require('webpack');
 
 let configuration = {
   entry: {
-    main: ['./front/webapp/src/js/app.js'],
+    main: ['./front/app.js'],
   },
   output: {
     path: __dirname + '/front/common/static/js',
-    filename: "bundle.js"
+    chunkFilename: '[name].bundle.js',
+    publicPath: '/static/js/',
+    filename: '[name].min.js',
   },
   module: {
     rules: [
@@ -36,7 +39,10 @@ let configuration = {
   plugins: [
     new ExtractTextPlugin({
       filename: '../css/styles.css'
-    })
+    }),
+    // new ReactLoadablePlugin({
+    //   filename: './front/react-loadable.json',
+    // })
   ]
 }
 

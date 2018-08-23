@@ -1,6 +1,6 @@
-import React from 'react';
+import React, {PureComponent} from 'react';
 
-var Button = React.createClass({
+class Button extends PureComponent{
   render() {
     const {
       variant,
@@ -14,6 +14,6 @@ var Button = React.createClass({
       </button>
     )
   }
-});
+}
 
 export default Button;
