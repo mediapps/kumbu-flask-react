@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 import TextGreeting from './greeting';
 import Panel from './panel';
 import ReactDOM from 'react-dom';
-import '../styles/hello.scss';
 
 class Home extends Component{
   render() {

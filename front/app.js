@@ -7,7 +7,7 @@ import Loadable from 'react-loadable';
 // import { getBundles } from 'react-loadable/webpack'
 // import stats from './react-loadable.json';
 import Loading from './common/src/js/loading';
-
+import './webapp/src/styles/hello.scss';
 
 //const Loading = () => <div>Loading...</div>;
 

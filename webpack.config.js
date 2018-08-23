@@ -1,6 +1,5 @@
 const path = require('path');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
-//const ReactLoadablePlugin = require('react-loadable/webpack');
 
 var webpack = require('webpack');
 
@@ -39,10 +38,7 @@ let configuration = {
   plugins: [
     new ExtractTextPlugin({
       filename: '../css/styles.css'
-    }),
-    // new ReactLoadablePlugin({
-    //   filename: './front/react-loadable.json',
-    // })
+    })
   ]
 }
 
