@@ -1,7 +1,7 @@
 
 # React + Flask Blueprints + Webpack 4 starter kit
 
-A starter repo that includes Flask Blueprints,React, and Webpack 4.
+A starter repo that includes Flask Blueprints, React, and Webpack 4.
 
 ### How to setup
 
@@ -24,9 +24,11 @@ python runserver.py             // run this in another tab if you ran webpack wi
 ```
 
 This is still very much a work in progress. For now :
-- The main routes are in `front/webapp/views.py`
-- The JS entry point is `front/webapp/src/js/app.js`
+- There are two Flask Blueprints containing routes and templates, `webapp` and `user`
+- The JS entry point is `front/app.js`
+- The React components are in `webapp`, `user` or `common`, and then `/src/js/`
 - The Sass is in `front/webapp/src/styles/`
 - All the Webpack outputs go to `front/common/static/`
-- This app does nothing except change the greeting language when you click on the button
+- On the home page (the root `/`), the "Say Hello" button changes the greeting language by calling a Flask route
+
 
