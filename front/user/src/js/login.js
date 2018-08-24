@@ -1,9 +1,8 @@
 import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
-import { Link, withRouter } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 
 import Button from '../../../common/src/js/button';
-
 
 class Login extends Component{
 
@@ -13,7 +12,10 @@ class Login extends Component{
   }
 
   login(){
-    this.props.history.push("/");
+    this.props.history.push({
+      pathname: '/',
+      state: { email: "tibo" }
+    });
   }
 
   render() {
@@ -21,7 +23,6 @@ class Login extends Component{
       <div>
         <label>email</label><input type="email" />
         <label>password</label><input type="password" />
-        <Link to='/'>Home</Link>
         <Button content="Login!" action={this.login} variant="green" />
       </div>
     )
