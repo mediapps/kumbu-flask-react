@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import Button from '../../../common/src/js/button';
+import Button from './common/button';
 var $ = require('jquery');
 
 class TextGreeting extends Component{
@@ -25,16 +25,6 @@ class TextGreeting extends Component{
         .catch(error => {                  // 3
             console.log("oups");
         });
-    // return fetch(window.location.href + "hello")
-    //   .then(response => {
-    //     var res = response //.json()
-    //     console.log(res)
-    //     return res
-    // })
-      // .then(data => {
-      //   console.log("second " + data)
-      //   return this.personaliseGreeting(data)
-      // })
   }
 
   render(){

@@ -5,10 +5,10 @@ var webpack = require('webpack');
 
 let configuration = {
   entry: {
-    main: ['./front/app.js'],
+    main: ['./client/app.js'],
   },
   output: {
-    path: __dirname + '/front/common/static/js',
+    path: __dirname + '/client/static/js',
     chunkFilename: '[name].bundle.js',
     publicPath: '/static/js/',
     filename: '[name].min.js',

@@ -2,18 +2,23 @@ from flask import render_template
 import random
 import json
 
-from . import webapp
+from front import app
 
 
-@webapp.route('/')
+@app.route('/')
 def index():
     return render_template('index.html')
 
 
-@webapp.route('/hello')
+@app.route('/hello')
 def hello():
     result = json.dumps({"greeting": get_hello()})
     return result
+
+
+@app.route('/login/')
+def login():
+    return render_template('login.html')
 
 
 def get_hello():

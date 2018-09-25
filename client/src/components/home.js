@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
 import { withRouter } from 'react-router-dom';
 
-import Button from '../../../common/src/js/button';
+import Button from './common/button';
 import TextGreeting from './greeting';
 import Panel from './panel';
 
