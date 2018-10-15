@@ -1,28 +1,37 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import Loadable from 'react-loadable';
-import Loading from './src/components/common/loading';
+import { Provider } from 'react-redux';
+
+// import Loadable from 'react-loadable';
+// import Loading from './src/components/common/loading';
+
+import Home from './src/components/home';
+import Login from './src/components/auth/login';
+import configureStore from './store';
 import './src/styles/hello.scss';
 
-const Home = Loadable({
-  loader: () => import('./src/components/home'),
-  loading: Loading,
-});
+// const Home = Loadable({
+//   loader: () => import('./src/components/home'),
+//   loading: Loading,
+// });
 
-const Login = Loadable({
-  loader: () => import('./src/components/auth/login'),
-  loading: Loading,
-});
+// const Login = Loadable({
+//   loader: () => import('./src/components/auth/login'),
+//   loading: Loading
+// });
 
+const store = configureStore();
 
 const App = () => (
-  <Router>
-    <Switch>
-      <Route exact path="/" component={Home}/>
-      <Route path="/login" component={Login}/>
-    </Switch>
-  </Router>
+  <Provider store={store}>
+    <Router>
+      <Switch>
+        <Route exact path="/" component={Home} />
+        <Route path="/login" component={Login} />
+      </Switch>
+    </Router>
+  </Provider>
 );
 
 ReactDOM.render(

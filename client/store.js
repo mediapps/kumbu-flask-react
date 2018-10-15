@@ -1,5 +1,11 @@
-import { createStore } from 'redux'
+import { createStore, applyMiddleware } from 'redux';
+import reduxImmutableStateInvariant from 'redux-immutable-state-invariant';
+import thunk from 'redux-thunk';
 
-import reducers from './reducers';
+import reducers from './src/reducers';
 
-const store = createStore(reducers)
+export default function configureStore() {
+  const store = createStore(reducers, applyMiddleware(thunk, reduxImmutableStateInvariant()));
+
+  return store;
+}

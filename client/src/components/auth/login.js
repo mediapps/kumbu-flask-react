@@ -1,57 +1,51 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import ReactDOM from 'react-dom';
 import { withRouter } from 'react-router-dom';
-
-import Button from '../common/button';
 
 import {
     emailChanged,
     passwordChanged
 } from '../../actions';
 
-class Login extends Component{
+class Login extends Component {
 
-  constructor(props){
+  constructor(props) {
     super(props);
-    this.state = {
-      email: '',
-      password: ''
-    }
-
-    this.login = this.login.bind(this);
-    // this.handleEmailChange = this.handleEmailChange.bind(this);
-    // this.handlePasswordChange = this.handlePasswordChange.bind(this);
+    console.log('coucou constructor login');
   }
 
-  handleEmailChange(event) {
-    console.log(event.target.value);
-    //this.setState({email: event.target.value});
-    this.props.emailChanged(text);
+  handleEmailChange = (event) => {
+    this.props.emailChanged(event.target.value);
   }
 
-  handlePasswordChange(event) {
-    //this.setState({password: event.target.value});
-    this.props.passwordChanged(text);
+  handlePasswordChange = (event) => {
+    this.props.passwordChanged(event.target.value);
   }
 
-  login(){
+  login = () => {
     this.props.history.push({
-      pathname: '/',
-      state: { email: this.state.email }
+      pathname: '/'
     });
   }
 
   render() {
-    return (
-      <div>
+    return (<div>
         <form onSubmit={this.login}>
-          <label>Email <input type="email" value={this.state.email} onChange={this.handleEmailChange}/></label>
-          <label>Password <input type="password" value={this.state.password} onChange={this.handlePasswordChange}/></label>
+          <label htmlFor='emailInput'>
+            Email <input
+              type="email" value={this.props.email}
+              id='emailInput' onChange={this.handleEmailChange}
+            />
+          </label>
+          <label htmlFor='passwordInput'>
+            Password <input
+              type="password" value={this.props.password}
+              id='passwordInput' onChange={this.handlePasswordChange}
+            />
+          </label>
           <input type="submit" value="Login!" />
         </form>
-      </div>
-    )
+    </div>);
   }
 
 }
@@ -60,21 +54,16 @@ class Login extends Component{
 const mapStateToProps = ({ auth }) => {
     const {
         email,
-        emailEdited,
-        password,
-        passwordEdited,
+        password
     } = auth;
 
     return {
         email,
-        emailEdited,
-        password,
-        passwordEdited,
-        isConnected
+        password
     };
 };
 
 
 export default withRouter(connect(mapStateToProps, {
-    emailChanged, passwordChanged, loginUser
+    emailChanged, passwordChanged
 })(Login));

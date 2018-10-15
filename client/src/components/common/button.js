@@ -1,6 +1,6 @@
-import React, {PureComponent} from 'react';
+import React, { PureComponent } from 'react';
 
-class Button extends PureComponent{
+class Button extends PureComponent {
   render() {
     const {
       variant,
@@ -12,7 +12,7 @@ class Button extends PureComponent{
       <button className={variant} onClick={action}>
         {content}
       </button>
-    )
+    );
   }
 }
 

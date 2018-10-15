@@ -1,11 +1,6 @@
 import {
     EMAIL_CHANGED,
-    NAME_CHANGED,
-    PASSWORD_CHANGED,
-    AUTH_USER_SUCCESS,
-    AUTH_USER_FAIL,
-    AUTH_USER,
-    LOG_OUT
+    PASSWORD_CHANGED
 } from './types';
 
 export const emailChanged = (text) => {
@@ -22,16 +17,16 @@ export const emailChanged = (text) => {
     };
 };
 
-export const nameChanged = (text) => {
-    let nameEdited = true;
+export const passwordChanged = (text) => {
+    let passwordEdited = true;
     if (text === '') {
-        nameEdited = false;
+        passwordEdited = false;
     }
     return {
-        type: NAME_CHANGED,
+        type: PASSWORD_CHANGED,
         payload: {
             text,
-            nameEdited
+            passwordEdited
         }
     };
 };

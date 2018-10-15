@@ -1,6 +1,6 @@
-import React, {PureComponent} from 'react';
+import React, { PureComponent } from 'react';
 
-class Panel extends PureComponent{
+class Panel extends PureComponent {
   render() {
     return (
       <div className="panel">
