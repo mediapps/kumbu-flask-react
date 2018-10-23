@@ -1,6 +1,7 @@
 import {
     EMAIL_CHANGED,
-    PASSWORD_CHANGED
+    PASSWORD_CHANGED,
+    LOG_OUT
 } from '../actions/types';
 
 const INITIAL_STATE = {
@@ -28,6 +29,12 @@ export default (state = INITIAL_STATE, action) => {
                     ...state,
                     password: text,
                     passwordEdited
+                };
+            }
+        case LOG_OUT:
+            {
+                return {
+                    ...INITIAL_STATE
                 };
             }
         default:

@@ -9,11 +9,6 @@ import {
 
 class Login extends Component {
 
-  constructor(props) {
-    super(props);
-    console.log('coucou constructor login');
-  }
-
   handleEmailChange = (event) => {
     this.props.emailChanged(event.target.value);
   }
@@ -22,7 +17,8 @@ class Login extends Component {
     this.props.passwordChanged(event.target.value);
   }
 
-  login = () => {
+  login = (event) => {
+    event.preventDefault();
     this.props.history.push({
       pathname: '/'
     });

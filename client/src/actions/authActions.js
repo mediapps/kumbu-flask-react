@@ -1,6 +1,7 @@
 import {
     EMAIL_CHANGED,
-    PASSWORD_CHANGED
+    PASSWORD_CHANGED,
+    LOG_OUT
 } from './types';
 
 export const emailChanged = (text) => {
@@ -28,5 +29,12 @@ export const passwordChanged = (text) => {
             text,
             passwordEdited
         }
+    };
+};
+
+export const logout = () => {
+    return {
+        type: LOG_OUT,
+        payload: {}
     };
 };

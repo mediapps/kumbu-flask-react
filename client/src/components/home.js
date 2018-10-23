@@ -5,27 +5,24 @@ import { withRouter } from 'react-router-dom';
 import Button from './common/button';
 import TextGreeting from './greeting';
 import Panel from './panel';
+import {
+  logout,
+} from '../actions';
 
 
 class Home extends Component {
-
   constructor(props) {
     super(props);
     this.logout = this.logout.bind(this);
   }
 
-  logout() {
-    console.log(this.props.history);
-    this.props.history.push({
-      pathname: '/login/',
-    });
-  }
+  logout = () => {
+    this.props.logout();
+    this.props.history.push({ pathname: '/login/' });
+  };
 
   render() {
-    console.log('hello');
-    console.log(this.props.email === '');
     if (this.props.email === '') {
-      console.log('hhhhhhelllo');
       this.logout();
     }
     return (
@@ -42,7 +39,6 @@ class Home extends Component {
       </div>
     );
   }
-
 }
 
 const mapStateToProps = ({ auth }) => {
@@ -55,4 +51,6 @@ const mapStateToProps = ({ auth }) => {
     };
 };
 
-export default withRouter(connect(mapStateToProps, {})(Home));
+export default withRouter(connect(mapStateToProps, {
+  logout
+})(Home));

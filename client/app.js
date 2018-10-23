@@ -9,6 +9,7 @@ import { Provider } from 'react-redux';
 import Home from './src/components/home';
 import Login from './src/components/auth/login';
 import configureStore from './store';
+import { saveState } from './localStorage';
 import './src/styles/hello.scss';
 
 // const Home = Loadable({
@@ -22,6 +23,10 @@ import './src/styles/hello.scss';
 // });
 
 const store = configureStore();
+
+store.subscribe(() => {
+  saveState(store.getState());
+});
 
 const App = () => (
   <Provider store={store}>
